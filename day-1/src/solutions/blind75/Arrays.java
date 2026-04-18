@@ -70,7 +70,6 @@ public class Arrays {
             i = i + len;
         }
 
-
         return result;
     }
 }

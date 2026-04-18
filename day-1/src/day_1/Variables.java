@@ -20,6 +20,9 @@ public class Variables {
 
         System.out.println(s);
 
+
+        boolean flag = false;
+
     }
 
 

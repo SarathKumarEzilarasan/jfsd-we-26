@@ -25,6 +25,8 @@ public class ConditionalStatements {
 //            System.out.println("b is greater");
 //        }
 
+        // time complexity -> o(3) -> o(1)
+        // space complexity -> o(1)
         int a = 200;
         int b = 500;
         int c = 300;

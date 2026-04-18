@@ -31,7 +31,7 @@ public class StringDemo {
 //        int i = Integer.parseInt(s);
 //        System.out.println(i);
 
-        toInt("-123");
+        toInt("2.4"); // regex
     }
 
     public static void immutability() {
@@ -95,10 +95,25 @@ public class StringDemo {
     }
 
     public static void toInt(String s) {
+        if (s == null || s.length() == 0) {
+            System.out.println(0);
+            return;
+        }
+
+        if (s.contains(".")) {
+            System.out.println(s.charAt(0));
+            return;
+        }
+
         int result = 0;
         int place = 0;
+        int endIndex = 0;
 
-        for (int i = s.length() - 1; i >= 0; i--) {
+        if (s.charAt(0) == '-') {
+            endIndex = 1;
+        }
+
+        for (int i = s.length() - 1; i >= endIndex; i--) {
             int ch = s.charAt(i) - 48;
             result = result + ch * (int) Math.pow(10, place);
             //       0      + 3 * 1 => result = 3
@@ -106,6 +121,11 @@ public class StringDemo {
             //       23     + 1 * 100 => result = 123
             place++;
         }
+
+        if (s.charAt(0) == '-') {
+            result = result * -1;
+        }
+
         System.out.println(result);
     }
 }
