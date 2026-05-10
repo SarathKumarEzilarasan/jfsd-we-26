@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="10_picture.html" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required value="hello world"> <br><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required> <br><br>
+        <label for="gender">Gender:</label>
+        <label for="gender">Male:</label>
+        <input type="checkbox" name="gender" value="Male">
+        <label for="gender">Female:</label>
+        <input type="checkbox" name="gender" value="Female"><br><br>
+        <label for="cars">Choose Car:</label>
+        <select name="cars" id="cars" disabled>
+            <option value="volvo">Volvo</option>
+            <option value="tata">Tata</option>
+            <option value="bmw">BMW</option>
+        </select>
+        <br><br>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" rows="10" cols="30" readonly></textarea>
+        <br><br>
+        <label for="email">Email</label>
+        <input type="email">
+        <br><br>
+        <input type="submit" value="Login">
+        <input type="reset">
+    </form>
+</body>
+</html>
