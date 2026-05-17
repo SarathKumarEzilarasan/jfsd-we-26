@@ -66,6 +66,10 @@ a:active {
   padding: 20px 10px;
 
   margin: 20px 10px;
+
+  height: 300px;
+  width: 400px;
+  overflow: auto;
 }
 
 .box-1 h1 {
@@ -161,4 +165,20 @@ a:active {
   position: absolute;
   bottom: 40px;
   right: 100px;
+}
+
+.fix-me {
+  position: fixed;
+  top: 200px;
+}
+
+.my-list li:nth-child(3) {
+  background-color: red;
+}
+
+.button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  margin-top: 20px;
 }
