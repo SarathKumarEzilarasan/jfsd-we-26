@@ -13,4 +13,15 @@ async function display() {
   }
 }
 
-display();
+// display();
+
+class ClassWithPrivateField {
+  #privateField;
+
+  constructor() {
+    this.#privateField = 42;
+  }
+}
+
+let myClass = new ClassWithPrivateField();
+console.log(myClass.privateField);
