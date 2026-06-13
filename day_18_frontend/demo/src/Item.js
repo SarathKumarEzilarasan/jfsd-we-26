@@ -1,0 +1,23 @@
+import React from "react";
+import { FaTrash } from "react-icons/fa";
+
+const Item = ({ item, handleCheck, deleteTask }) => {
+  return (
+    <li className="item">
+      <input
+        type="checkbox"
+        checked={item.checked}
+        onChange={() => handleCheck(item.id)}
+      ></input>
+      <label
+        onDoubleClick={() => handleCheck(item.id)}
+        style={item.checked ? { textDecoration: "line-through" } : null}
+      >
+        {item.description}
+      </label>
+      <FaTrash role="button" onClick={() => deleteTask(item.id)} />
+    </li>
+  );
+};
+
+export default Item;
