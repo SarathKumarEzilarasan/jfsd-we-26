@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:property-placeholder location="sports.properties"></context:property-placeholder>
+    <context:component-scan base-package="demo"></context:component-scan>
+
+<!--    <bean id="myWish" class="demo.HappyWishService"></bean>-->
+
+<!--    <bean id="myCricketCoach" class="demo.CricketCoach" scope="prototype" init-method="startUpMethod" destroy-method="destroyMethod">-->
+<!--        &lt;!&ndash; constructor injection&ndash;&gt;-->
+<!--&lt;!&ndash;        <constructor-arg ref="myWish"></constructor-arg>&ndash;&gt;-->
+<!--        &lt;!&ndash; setter injection&ndash;&gt;-->
+<!--        <property name="wishService" ref="myWish"></property>-->
+<!--&lt;!&ndash;        <property name="team" value="India"></property>&ndash;&gt;-->
+<!--        <property name="team" value="${sports.team}"></property>-->
+<!--    </bean>-->
+</beans>
