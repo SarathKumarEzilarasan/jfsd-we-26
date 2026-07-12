@@ -3,6 +3,8 @@ package spring.demo.mysql.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import spring.demo.mysql.entity.User;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+import java.util.Optional;
 
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByEmail(String email);
 }
