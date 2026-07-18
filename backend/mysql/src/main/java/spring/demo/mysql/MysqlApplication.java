@@ -1,5 +1,8 @@
 package spring.demo.mysql;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.info.Info;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,6 +11,18 @@ import spring.demo.mysql.dto.UserDto;
 import spring.demo.mysql.entity.User;
 
 @SpringBootApplication
+@OpenAPIDefinition(
+		info = @Info(
+				title = "Spring Boot Rest API Documentation",
+				description = "Spring Boot Student API's",
+				version="v1.0",
+				contact = @Contact(
+						name = "John",
+						email = "test@gmail.com",
+						url = "https://www.google.com"
+				)
+		)
+)
 public class MysqlApplication {
 
 	@Bean

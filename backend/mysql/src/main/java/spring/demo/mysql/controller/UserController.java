@@ -1,5 +1,8 @@
 package spring.demo.mysql.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,6 +17,10 @@ import java.util.List;
 @RestController
 @RequestMapping("api/users")
 @AllArgsConstructor
+@Tag(
+        name = "CRUD APIs for User Resource",
+        description = "CRUD REST API's - Create User, Update User, Get User, Get All User, Delete User"
+)
 public class UserController {
 
     private UserService userService;
@@ -24,6 +31,14 @@ public class UserController {
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
 
+    @Operation(
+            summary = "Get User API",
+            description = "Get an existing User from the database"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "OK Success"
+    )
     @GetMapping("{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable("id") Long userId) {
         UserDto userDto = userService.getUserById(userId);
