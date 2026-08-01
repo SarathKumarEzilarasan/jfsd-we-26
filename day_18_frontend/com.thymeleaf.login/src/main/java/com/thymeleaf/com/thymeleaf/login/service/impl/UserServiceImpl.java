@@ -3,11 +3,13 @@ package com.thymeleaf.com.thymeleaf.login.service.impl;
 import com.thymeleaf.com.thymeleaf.login.dto.UserDto;
 import com.thymeleaf.com.thymeleaf.login.entity.Role;
 import com.thymeleaf.com.thymeleaf.login.entity.User;
+import com.thymeleaf.com.thymeleaf.login.exception.ResourceNotFoundException;
 import com.thymeleaf.com.thymeleaf.login.repository.RoleRepository;
 import com.thymeleaf.com.thymeleaf.login.repository.UserRepository;
 import com.thymeleaf.com.thymeleaf.login.service.UserService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -20,6 +22,7 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     private RoleRepository roleRepository;
     private ModelMapper modelMapper;
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public UserDto saveUser(UserDto userDto) {
@@ -33,6 +36,7 @@ public class UserServiceImpl implements UserService {
         }
 
         user.setRoles(Arrays.asList(role));
+        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         User savedUser = userRepository.save(user);
         return modelMapper.map(savedUser, UserDto.class);
     }
