@@ -11,7 +11,7 @@ public class MergeSortDemo {
         System.out.println(Arrays.toString(array));
     }
 
-    // time -> o(n log n) > o(n2)
+    // time -> o(n log n)
     // space -> o(n)
     private static void mergeSort(int[] array, int left, int right) {
         if (left < right) {
@@ -50,8 +50,6 @@ public class MergeSortDemo {
             array[k++] = rightArr[j++];
         }
     }
-
-
 }
 
 

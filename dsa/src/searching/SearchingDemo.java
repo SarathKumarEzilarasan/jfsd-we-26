@@ -12,22 +12,6 @@ public class SearchingDemo {
         int x = 7;
 
 //        linearSearch(list, x);
-        System.out.println(binarySearch(list, 0, list.size() - 1, x));
-    }
-
-    private static int binarySearch(List<Integer> list, int low, int high, int target) {
-        if (low <= high) {
-            int mid = (low + high) / 2;
-            int midValue = list.get(mid);
-            if (midValue == target) {
-                return mid;
-            } else if (midValue > target) {
-                return binarySearch(list, low, mid - 1, target);
-            } else {
-                return binarySearch(list, mid + 1, high, target);
-            }
-        }
-        return -1;
     }
 
     private static void linearSearch(List<Integer> list, int x) {
